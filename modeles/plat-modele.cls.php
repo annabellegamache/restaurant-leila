@@ -1,0 +1,24 @@
+<?php
+class PlatModele extends AccesBd {
+    public function tout(){
+        //Implémentation de la méthode
+        $sql = "SELECT * FROM plat
+                JOIN categorie
+                ON pla_cat_id_ce = cat_id
+                WHERE cat_type = 'plat'
+                ORDER BY cat_id";
+      return $this->lire($sql);
+    }
+
+    public function ajouter(){
+
+    }
+
+    public function changer(){
+        
+    }
+
+    public function retirer(){
+        
+    }
+}
