@@ -1,9 +1,7 @@
 <?php
    include('inclusions/entete.inc.php');
-
   //Instancier la classe PlatModele qui devient un object
   $platModele = new PlatModele();
-
   //Chercher tout les plats de la bd
   $menu = $platModele->tout(); //Instance appelant la méthode dans une variable.
  
