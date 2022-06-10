@@ -41,11 +41,12 @@ class AccesBd
     protected function lire($sql, $params = [])
     {
         $this->soumettre($sql, $params);
-        $enregistrements = []; //pour recevoir les données
-        while ($enreg = $this->requete->fetch()) {
+        /*$enregistrements = []; //pour recevoir les données
+       while ($enreg = $this->requete->fetch()) {
             $enregistrements[$enreg->cat_nom][] = $enreg; // $enreg->cat_nom][] = trop specifique 
         }
-        return $enregistrements;
+        return $enregistrements;*/
+        return $this->requete->fetchAll(PDO::FETCH_GROUP); //retourne tout les enregistrement de la bd sans grouper
     }
 
 
