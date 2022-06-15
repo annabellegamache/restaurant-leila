@@ -1,5 +1,5 @@
 <?php
-  include('inclusions/entete.inc.php');
+  include('vues/entete.inc.php');
   //Instancier la classe PlatModele qui devient un object
   $vinModele = new VinModele();
   //Chercher tout les plats de la bd
@@ -22,7 +22,7 @@
     </header>
     <div class="contenu-principal">
       <div class="citation">
-        <img src="images/vins-citation.png" alt="">
+        <img src="ressources/images/vins-citation.png" alt="">
         <blockquote>
           Le vin est la partie intellectuelle d’un repas, les viandes et les légumes n’en sont que la partie matérielle.
           <cite>- Alexandre Dumas</cite>
@@ -59,5 +59,5 @@
       </div>
     </div>
 <?php
-  include('inclusions/pied2page.inc.php');
+  include('vues/pied2page.inc.php');
 ?>

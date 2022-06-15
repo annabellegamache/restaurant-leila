@@ -13,6 +13,6 @@ class PlatControleur
 
     public function ajouter()
     {
-        $_POST // Superglobal tableau à l aportée de toute l'application
+        $_POST; // Superglobal tableau à l aportée de toute l'application
     }
 }

@@ -63,8 +63,10 @@ class Routeur
 
     if(class_exists($nomControleur)){
       if(!is_callable(array($nomControleur, $action))){
-        
+        $action = "index";
       }
+      $controleur = new $nomControleur($nomModele, $module, $action);
+      $controleur->$action($param);
     }
     else {
       $controleur = new AccueilControleur();

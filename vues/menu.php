@@ -1,5 +1,5 @@
 <?php
-   include('inclusions/entete.inc.php');
+   include('vues/entete.inc.php');
   //Instancier la classe PlatModele qui devient un object
   $platModele = new PlatModele();
   //Chercher tout les plats de la bd
@@ -23,7 +23,7 @@
     </header>
     <div class="contenu-principal">
       <div class="citation">
-        <img src="images/menu-citation.jpg" alt="">
+        <img src="ressources/images/menu-citation.jpg" alt="">
         <blockquote>
           Le plus grand outrage que l'on puisse faire à un gourmand, c'est de l'interrompre dans l'exercice de ses mâchoires.
           <cite>- Alexandre Balthazar Grimod de la Reynière</cite>
@@ -57,5 +57,5 @@
       </div>
     </div>
 <?php
-  include('inclusions/pied2page.inc.php');
+  include('vues/pied2page.inc.php');
 ?>
