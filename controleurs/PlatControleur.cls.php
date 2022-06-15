@@ -1,18 +1,26 @@
 <?php
-class PlatControleur
+class PlatControleur extends Controleur
 {
-    public function index()
+
+    /*Action par defaut si aucune action */
+    public function index($params)
     {
+        $this->tout($params);
         
     }
 
-    public function tout()
+    public function tout($params)
     {
+        //Instancier modele et appeler la methode tout sur le modele
+        //Chercher les plats de la BD (job de la classe PlatModele)
+        $resultat = $this->modele->tout(); // doit prendre le resultat de la bd et l'injecter dans la vue
+        $this->gabarit->affecter('menu', $resultat);  //menu = etiquette...
 
     }
 
     public function ajouter()
     {
-        $_POST; // Superglobal tableau à l aportée de toute l'application
+       // $_POST;  Superglobal tableau à l aportée de toute l'application
+
     }
 }

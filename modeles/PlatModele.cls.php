@@ -8,7 +8,7 @@ class PlatModele extends AccesBd {
                 ON pla_cat_id_ce = cat_id
                 WHERE cat_type = 'plat'
                 ORDER BY cat_id";
-      return $this->lire($sql);
+      return $this->lire($sql); //retourne le jeu d'enregistrement de la BD grouper par la catégorie
     }
 
     public function ajouter(){
