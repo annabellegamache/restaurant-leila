@@ -1,5 +1,5 @@
 <?php
-class PlatControleur extends Controleur  /*controler = interactivité = vue .....modele = bd*/
+class Adresse extends Controleur  /*controler = interactivité = vue .....modele = bd*/
 {
 
     /*Action par defaut si aucune action elle fait ombre a l'autre methode...elle cache la method parents*/
@@ -15,7 +15,7 @@ class PlatControleur extends Controleur  /*controler = interactivité = vue ....
         //Instancier modele et appeler la methode tout sur le modele
         //Chercher les plats de la BD (job de la classe PlatModele)
         $resultat = $this->modele->tout(); // doit prendre le resultat de la bd et l'injecter dans la vue
-        $this->gabarit->affecter('menu', $resultat);  //menu = etiquette... $menu dans vue plats
+        $this->gabarit->affecter('adresse', $resultat);  //menu = etiquette... $menu dans vue plats
 
     }
 

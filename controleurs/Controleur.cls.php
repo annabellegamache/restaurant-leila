@@ -13,12 +13,19 @@ class Controleur{
         }
         //injece le resultat dans la vue
         $this->gabarit = new HtmlGabarit($module, $action);
+        $this->gabarit->affecter('page', $module);
     }
 
     /* methode magique qui detruit l'objet apres generer le code */
     function __destruct()
     {
         $this->gabarit->genererVue(); //derniere action è la destruction...on affiche la vue
+    }
+
+    /*evite des erreurs sans faire des tonnes de if...index est le module par defaut bug accueilControleu...qui n'a pas lieu d'être*/
+    public function index($params)
+    {
+
     }
 
 }

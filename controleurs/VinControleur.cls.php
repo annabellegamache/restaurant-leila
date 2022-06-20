@@ -4,6 +4,7 @@ class VinControleur extends Controleur
         /*Action par defaut si aucune action */
         public function index($params)
         {
+            $this->gabarit->affecterActionDefaut('tout');
             $this->tout($params);
             
         }

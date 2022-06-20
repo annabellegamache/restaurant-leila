@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,21 +6,27 @@
   <meta name="robots" content="noindex, nofollow">
   <title>Accueil | Restaurant Leila</title>
   <meta name="description" content="Restaurant Leila - Montréal">
-  <link rel="stylesheet" src="./ressources/css/ext/normalize.css">
-  <link rel="stylesheet" src="./ressources/css/leila.css">
+  <link rel="stylesheet" href="ressources/css/ext/normalize.css">
+  <link rel="stylesheet" href="ressources/css/leila.css">
 </head>
 <body>
-  <div id="conteneur" class="page-accueil">
+  <div id="conteneur" class="page-<?= $page ?>">
     <header>
       <div class="barre-haut">
         <nav class="social">
           <a href="http://www.facebook.com" target="lien-externe">
-            <img alt="Facebook" src="./ressources/images/iu/nav-icone-facebook.svg">
+            <img alt="Facebook" src="ressources/images/iu/nav-icone-facebook.svg">
           </a>
           <a href="http://www.twitter.com" target="lien-externe">
-            <img alt="Twitter" src="./ressources/images/iu/nav-icone-twitter.svg">
+            <img alt="Twitter" src="ressources/images/iu/nav-icone-twitter.svg">
           </a>
         </nav>
+        
+        <?php if($page != 'accueil'):?>
+          <h1 class="logo">
+          <a href="index.php">Leila</a>  
+          </h1>
+        <?php endif; ?>
         <nav class="i18n">
           <a href="#" class="actif" title="Français">fr</a>
           <a href="#" title="English">en</a>

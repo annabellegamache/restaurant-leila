@@ -38,9 +38,6 @@ class Routeur
       else if(file_exists("gabarits/$nomFichier")){
         include("gabarits/$nomFichier");
       }
-      else {
-          exit("Problème majeur...");
-      }
     });
   }// fin __construct Routeur
 
@@ -67,15 +64,15 @@ class Routeur
 
     //par defaut si il existe include la classe automatiquement...peut mettre false en arguments.
     if(class_exists($nomControleur)){
-      if(!is_callable(array($nomControleur, $action))){  //si pas callable (instance avec la fonction souhaiter reste index sinon on instance...)
-        $action = "index";
+      if(!method_exists($nomControleur, $action)){  //verifie si methode exists dans la classe (instance avec la fonction souhaiter reste index sinon on instance...)
+        $action = "index"; /// ex: pour donner plat.index.php 
       }
       /*on instancie le controler et on instancie on appelle l'action */
       $controleur = new $nomControleur($nomModele, $module, $action);
       $controleur->$action($params); //apelle methode
     }
     else {
-      $controleur = new AccueilControleur('', 'accueil', 'index'); 
+      $controleur = new Controleur('', 'accueil', 'index'); //nomModele, module et action
     }
    
   }// fin invoquerRoute
