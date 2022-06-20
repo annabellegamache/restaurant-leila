@@ -34,11 +34,12 @@ class AccesBd
     * Fonction qui obtient un jeu d'enregistrement de la BD
     * @param string $sql Requete SQL
     * @param array $sprams Paramèetre à passer à la requête paramétrées PDO
+    * @param boolen $groupe true si on veut groupé le jeu d'enregistrement dans le tableay php retourné, defaut=true
     * @return array Tableau contenant les rnregistrements
 
     *
     */
-    protected function lire($sql, $params = [])
+    protected function lire($sql, $groupe=true, $params = [])
     {
         $this->soumettre($sql, $params);
         /*$enregistrements = []; //pour recevoir les données
@@ -46,7 +47,11 @@ class AccesBd
             $enregistrements[$enreg->cat_nom][] = $enreg; // $enreg->cat_nom][] = trop specifique 
         }
         return $enregistrements;*/
-        return $this->requete->fetchAll(PDO::FETCH_GROUP); //retourne tout les enregistrement de la bd sans grouper
+        if($groupe) {
+            return $this->requete->fetchAll(PDO::FETCH_GROUP); //retourne tout les enregistrement de la bd sans grouper
+        }else{
+            return $this->requete->fetchAll();
+        }
     }
 
 

@@ -15,20 +15,19 @@
 </header>
 <div class="contenu-principal">
   <div class="adresses">
+    <!--Une section par adresse-->
+    <?php foreach ($succursales as $adresse) : ?>
     <section>
-      <div class="photo"><img src="ressources/images/succursales/1.jpg" alt="Photo succursale Plateau"></div>
-      <h3>Plateau Mont-Royal</h3>
-      <span class="rue">1258 Laurier Est</span>
-      <p>&#x1f4de; 514-804-6523</p>
-      <p>&#x1f4cc; <a target="carte-gm" href="http://google.com">Carte Google Maps</a></p>
+      <div class="photo"><img src="ressources/images/succursales/<?= $adresse->adr_id ?>.jpg" alt="Photo succursale <?= $adresse->adr_nom ?>"></div>
+      <h3><?= $adresse->adr_nom ?></h3>
+      <span class="rue"><?= $adresse->adr_rue ?></span>
+      <?php 
+        $telFormat = preg_replace('/(\d{3})(\d{3})(\d{4})/', '/[(](\d{3})[)](\d{3})[-](\d{4})/', $adresse->adr_tel);
+
+       ?>
+      <p>&#x1f4de; <?=  $telFormat  ?></p>
+      <p>&#x1f4cc; <a target="carte-gm" href="<?= $adresse->adr_carte_gm ?>">Carte Google Maps</a></p>
     </section>
-    <section>
-      <div class="photo"><img src="ressources/images/succursales/2.jpg" alt="Photo succursale Rosemont"></div>
-      <h3>Rosemont</h3>
-      <span class="rue">6523 Beaubien</span>
-      <p>&#x1f4de; 514-825-5213</p>
-      <p>&#x1f4cc; <a target="carte-gm" href="http://google.com">Carte Google Maps</a></p>
-    </section>
-    
+    <?php endforeach; ?>
   </div>
 </div>

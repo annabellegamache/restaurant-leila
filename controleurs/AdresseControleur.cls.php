@@ -1,8 +1,8 @@
 <?php
-class Adresse extends Controleur  /*controler = interactivité = vue .....modele = bd*/
+class AdresseControleur extends Controleur  
 {
 
-    /*Action par defaut si aucune action elle fait ombre a l'autre methode...elle cache la method parents*/
+   
     public function index($params)
     {
         $this->gabarit->affecterActionDefaut('tout');
@@ -12,10 +12,9 @@ class Adresse extends Controleur  /*controler = interactivité = vue .....modele
 
     public function tout($params)
     {
-        //Instancier modele et appeler la methode tout sur le modele
-        //Chercher les plats de la BD (job de la classe PlatModele)
-        $resultat = $this->modele->tout(); // doit prendre le resultat de la bd et l'injecter dans la vue
-        $this->gabarit->affecter('adresse', $resultat);  //menu = etiquette... $menu dans vue plats
+       
+        /*Chercher les adresses dans la BD et les affecter dans le tableau $variables du gabarit */
+        $this->gabarit->affecter('succursales', $this->modele->tout());  //menu = etiquette... $menu dans vue plats
 
     }
 
